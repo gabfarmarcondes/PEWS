@@ -23,13 +23,13 @@ public class AvaliadorBDConfig {
     @Bean
     @Primary
     @ConfigurationProperties(prefix = "avaliador.datasource")
-    public DataSource avalaidorDataSource() { return DataSourceBuilder.create().build(); }
+    public DataSource avaliadorDataSource() { return DataSourceBuilder.create().build(); }
 
     @Bean
     @Primary
     public LocalContainerEntityManagerFactoryBean avaliadorEntityManager(
             EntityManagerFactoryBuilder builder,
-            @Qualifier(value = "avalaidorDataSource") DataSource dataSource) {
+            @Qualifier(value = "avaliadorDataSource") DataSource dataSource) {
         return builder
                 .dataSource(dataSource)
                 .packages("br.edu.utfpr.pews.model.avaliador")
