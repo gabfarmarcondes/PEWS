@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento de Pacientes Pediátricos - Escala PEWS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Formulário de Monitoramento - Escala PEWS</h1>
+    </header>
+    <form id="pews-form" action="submit" method="POST">
+        <fieldset>
+            <legend>Informações do Paciente</legend>
+            <label for="nome">Nome do Paciente:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required min="0" max="18">
+
+            <label for="data-nascimento">Data de Nascimento:</label>
+            <input type="date" id="data-nascimento" name="data-nascimento" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Avaliação PEWS</legend>
+            <label for="esforco-respiratorio">Esforço Respiratório:</label>
+            <select id="esforco-respiratorio" name="esforco-respiratorio" required>
+                <option value="Selecione">Selecione</option>
+                <option value="0">Normal</option>
+                <option value="1">Leve</option>
+                <option value="2">Moderado</option>
+                <option value="3">Severo</option>
+            </select>
+
+            <label for="saturacao-oxigenio">Saturação de Oxigênio (%):</label>
+            <input type="number" id="saturacao-oxigenio" name="saturacao-oxigenio" required min="0" max="100">
+
+            <label for="pulso">Pulso:</label>
+            <input type="number" id="pulso" name="pulso" required min="0">
+
+            <label for="nivel-consciencia">Nível de Consciência:</label>
+            <select id="nivel-consciencia" name="nivel-consciencia" required>
+                <option value="Selecione">Selecione</option>
+                <option value="0">Alerta</option>
+                <option value="1">Ligeiramente Alterado</option>
+                <option value="2">Moderadamente Alterado</option>
+                <option value="3">Severo</option>
+            </select>
+        </fieldset>
+
+        <button type="submit">Enviar Avaliação</button>
+    </form>
+</div>
+</body>
+</html>
